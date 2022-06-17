@@ -1,0 +1,88 @@
+POST http://localhost:3500/api/hotels
+Content-Type: application/json
+
+{
+    "name":"sri pg",
+    "type":"rooms",
+    "city":"Rajuhmandry",
+    "address":"sridevi colony",
+    "distance":"500",
+    "description":"available rooms with attached toilets",
+    "rating":4,
+    "rooms":["3room 4room"],
+    "cheapestPrice":5000,
+    "title":"SRI NILAYAM",
+    "featured":true
+}
+
+#######
+PUT http://localhost:3500/api/hotels/62a0dd15406e9dced7600ce3
+Content-Type: application/json
+
+{
+    "name":"sri pg updated",
+    "type":"rooms updated",
+    "city":"kakinada",
+    "address":"sridevi colony",
+    "distance":"500",
+    "description":"available rooms with attached toilets",
+    "rating":4,
+    "rooms":["3room 4room"],
+    "cheapestPrice":5000,
+    "title":"SRI NILAYAM",
+    "featured":true
+}
+
+#####
+GET  http://localhost:3500/api/hotels/find/62a0dd15406e9dced7600ce3
+
+
+######
+GET http://localhost:3500/api/hotels/
+
+####
+POST http://localhost:3500/api/auth/register/
+Content-Type: application/json
+
+{
+    "username":"A.Srinivasa",
+    "email":"srinivasa@gmail.com",
+    "password":"THISISASECRET"
+}
+
+######
+POST http://localhost:3500/api/auth/login
+Content-Type: application/json
+
+{
+    "username":"A.Srinivasa",
+    "password":"THISISASECRET"
+}
+
+#####
+GET http://localhost:3500/api/users/check
+
+
+#######
+GET http://localhost:3500/api/users/checkUser/35345345345
+
+#######
+GET http://localhost:3500/api/users/checkAdmin/2342342342342
+
+######
+POST http://localhost:3500/api/rooms/62a0dc9a406e9dced7600ce1
+Content-Type: application/json
+
+{
+    "title": "King room",
+    "description": "This room has 2 beds, 1 bathroom and balcony",
+    "price": 1500,
+    "maxPeople": 2,
+    "roomNumbers": [{"number":101}, {"number":102}, {"number":103}]
+}
+
+######
+DELETE http://localhost:3500/api/rooms/62a5d05f99181d832d7511bb/62a0dc9a406e9dced7600ce1
+
+#######
+GET http://localhost:3500/api/hotels/getByCity?cities=kakinada,Rajuhmandry
